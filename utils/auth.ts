@@ -14,8 +14,8 @@ export async function signInWithFacebook() {
       await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
       const credential = firebase.auth.FacebookAuthProvider.credential(token);
       // merge user accounts - call mergeUser function, get user, call firebase.link()
-      const facebookProfileData = await firebase.auth().signInWithCredential(credential)
-        .catch(err => mergeUser(err));
+      const facebookProfileData = await firebase.auth().signInWithCredential(credential);
+      // .catch(err => mergeUser(err));
       await createUser(facebookProfileData.user.uid, facebookProfileData.user);
       return Promise.resolve({ type: 'success' });
     }
@@ -48,8 +48,8 @@ export async function signInWithTwitter(token) {
   try {
     await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
     const credential = firebase.auth.TwitterAuthProvider.credential(token.oauth_token, token.oauth_token_secret);
-    const twitterProfileData = await firebase.auth().signInWithCredential(credential)
-      .catch(err => mergeUser(err));
+    const twitterProfileData = await firebase.auth().signInWithCredential(credential);
+    // .catch(err => mergeUser(err));
     await createUser(twitterProfileData.user.uid, twitterProfileData.user);
     return Promise.resolve({ type: 'success' });
   }
