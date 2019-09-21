@@ -8,5 +8,7 @@ TODO:
 
 - find way to merge firebase users so can login using whatever social login user prefers.
 
+- add Google sign in
 
+- add Redux? and helper functions...
 
