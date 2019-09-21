@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-native",
+    "lib": ["dom", "esnext"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@config/*": ["config/*"],
+      "@src/*": ["./*"],
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["components/*"],
+      "@kitten/*": ["./node_modules/react-native-ui-kitten/*"]
+    }
+  }
+}
